@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Demon List</title>
+
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        background: #0b0d11;
+        color: #e8e8e8;
+    }
+
+    header {
+        height: 68px;
+        background: #15181e;
+        border-bottom: 1px solid #292d35;
+        display: flex;
+        align-items: center;
+        padding: 0 8%;
+    }
+
+    .logo {
+        font-size: 22px;
+        font-weight: bold;
+        color: #ffffff;
+        margin-right: 50px;
+    }
+
+    nav {
+        display: flex;
+        gap: 30px;
+    }
+
+    nav a {
+        color: #bfc3ca;
+        text-decoration: none;
+        font-size: 16px;
+    }
+
+    nav a:hover {
+        color: white;
+    }
+
+    .container {
+        width: min(1050px, 92%);
+        margin: 35px auto;
+    }
+
+    .hero {
+        background: #15181e;
+        border: 1px solid #292d35;
+        padding: 35px;
+        text-align: center;
+        border-radius: 5px;
+        margin-bottom: 25px;
+    }
+
+    .hero h1 {
+        margin: 0 0 10px;
+        font-size: 36px;
+    }
+
+    .hero p {
+        color: #9da3ad;
+        margin-bottom: 25px;
+    }
+
+    .search {
+        width: 100%;
+        padding: 15px;
+        background: #0d0f13;
+        border: 1px solid #383d46;
+        color: white;
+        font-size: 16px;
+        border-radius: 3px;
+        outline: none;
+    }
+
+    .search:focus {
+        border-color: #777f8d;
+    }
+
+    .tabs {
+        display: flex;
+        background: #15181e;
+        border: 1px solid #292d35;
+        margin-bottom: 20px;
+    }
+
+    .tab {
+        flex: 1;
+        text-align: center;
+        padding: 16px;
+        color: #aeb4bd;
+        cursor: pointer;
+    }
+
+    .tab.active {
+        background: #20242c;
+        color: white;
+    }
+
+    .level {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        background: #15181e;
+        border: 1px solid #292d35;
+        padding: 18px;
+        margin-bottom: 15px;
+        border-radius: 4px;
+    }
+
+    .rank {
+        width: 55px;
+        text-align: center;
+        font-size: 25px;
+        font-weight: bold;
+        color: #8d94a0;
+    }
+
+    .thumbnail {
+        width: 155px;
+        height: 85px;
+        background: linear-gradient(135deg, #333945, #171a20);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #777f8c;
+        border-radius: 3px;
+        flex-shrink: 0;
+    }
+
+    .info {
+        flex: 1;
+    }
+
+    .name {
+        font-size: 21px;
+        font-weight: bold;
+        margin-bottom: 8px;
+        color: white;
+    }
+
+    .details {
+        color: #9da3ad;
+        font-size: 14px;
+        line-height: 1.7;
+    }
+
+    .points {
+        text-align: right;
+        color: #b9bec7;
+        min-width: 100px;
+    }
+
+    .points strong {
+        display: block;
+        color: white;
+        font-size: 18px;
+    }
+
+    @media (max-width: 700px) {
+        header {
+            padding: 0 4%;
+        }
+
+        .logo {
+            margin-right: 20px;
+        }
+
+        nav {
+            gap: 12px;
+        }
+
+        .level {
+            gap: 10px;
+        }
+
+        .thumbnail {
+            width: 100px;
+            height: 65px;
+        }
+
+        .rank {
+            width: 30px;
+        }
+
+        .points {
+            display: none;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">DEMON LIST</div>
+
+    <nav>
+        <a href="#">Main List</a>
+        <a href="#">Extended</a>
+        <a href="#">Legacy</a>
+        <a href="#">Stats</a>
+    </nav>
+</header>
+
+<div class="container">
+
+    <section class="hero">
+        <h1>Demon List</h1>
+        <p>The hardest levels in the game.</p>
+
+        <input
+            id="search"
+            class="search"
+            type="text"
+            placeholder="Search demons..."
+            onkeyup="searchLevels()"
+        >
+    </section>
+
+    <div class="tabs">
+        <div class="tab active">Main List</div>
+        <div class="tab">Extended List</div>
+        <div class="tab">Legacy List</div>
+    </div>
+
+    <div id="levels">
+
+        <div class="level" data-name="Bloodbath">
+            <div class="rank">#1</div>
+            <div class="thumbnail">LEVEL</div>
+
+            <div class="info">
+                <div class="name">Bloodbath</div>
+                <div class="details">
+                    Published by Riot<br>
+                    Verified by Riot
+                </div>
+            </div>
+
+            <div class="points">
+                <strong>100 pts</strong>
+                100%
+            </div>
+        </div>
+
+        <div class="level" data-name="Sonic Wave">
+            <div class="rank">#2</div>
+            <div class="thumbnail">LEVEL</div>
+
+            <div class="info">
+                <div class="name">Sonic Wave</div>
+                <div class="details">
+                    Published by APTeam<br>
+                    Verified by Cyclic
+                </div>
+            </div>
+
+            <div class="points">
+                <strong>99 pts</strong>
+                100%
+            </div>
+        </div>
+
+        <div class="level" data-name="Artificial Ascent">
+            <div class="rank">#3</div>
+            <div class="thumbnail">LEVEL</div>
+
+            <div class="info">
+                <div class="name">Artificial Ascent</div>
+                <div class="details">
+                    Published by Team A<br>
+                    Verified by Viprin
+                </div>
+            </div>
+
+            <div class="points">
+                <strong>98 pts</strong>
+                100%
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script>
+function searchLevels() {
+    const search = document
+        .getElementById("search")
+        .value
+        .toLowerCase();
+
+    const levels = document.querySelectorAll(".level");
+
+    levels.forEach(level => {
+        const name = level.dataset.name.toLowerCase();
+
+        if (name.includes(search)) {
+            level.style.display = "flex";
+        } else {
+            level.style.display = "none";
+        }
+    });
+}
+</script>
+
+</body>
+</html>
